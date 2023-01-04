@@ -16,5 +16,5 @@ class RSSCollection(Collection):
         """Entries for this would be """
 
         for entry in self.content['entries']:
-            yield self.content_type(content=entry, Parser=self.PageParser)
+            yield self.gen_page(content=entry)
             

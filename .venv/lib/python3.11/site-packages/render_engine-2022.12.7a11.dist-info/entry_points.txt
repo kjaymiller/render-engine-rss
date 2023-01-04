@@ -1,0 +1,2 @@
+[console_scripts]
+createapp = render_engine.create_app:create_app

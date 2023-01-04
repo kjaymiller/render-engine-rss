@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: render-engine-rss
+Version: 2023.1.0a2
+Summary: RSS Parser and Collection for Render Engine
+Project-URL: homepage, https://github.com/kjaymiller/render_engine_json/
+Project-URL: repository, https://github.com/kjaymiller/render_engine_json/
+Description-Content-Type: text/markdown

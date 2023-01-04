@@ -1,0 +1,2 @@
+render-engine>=2022.12.7a3
+feedparser

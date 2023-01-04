@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "render_engine_rss"
+version = "2023.1.0a2"
+description = "RSS Parser and Collection for Render Engine"
+readme = "README.md"
+
+dependencies = [
+    "render-engine >= 2022.12.7a3",
+    "feedparser"
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[project.urls]
+homepage = "https://github.com/kjaymiller/render_engine_json/"
+repository = "https://github.com/kjaymiller/render_engine_json/"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]

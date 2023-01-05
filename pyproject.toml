@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "render_engine_rss"
-version = "2023.1.0a3"
+version = "2023.1.0a4"
 description = "RSS Parser and Collection for Render Engine"
 readme = "README.md"
 
@@ -12,6 +12,10 @@ dependencies = [
     "render-engine >= 2022.12.7a3",
     "feedparser"
 ]
+
+[project.optional-dependencies]
+    dev = ["pytest", "pytest-mock"]
+
 
 [tool.setuptools]
 package-dir = {"" = "src"}

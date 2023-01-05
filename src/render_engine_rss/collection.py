@@ -6,6 +6,7 @@ from render_engine.collection import Collection
 class RSSCollection(Collection):
     PageParser = RSSFeedPageParser
     content_path = str
+    sort_by = "published_parsed"
 
     def __init__(self):
         self.content = feedparser.parse(self.content_path)

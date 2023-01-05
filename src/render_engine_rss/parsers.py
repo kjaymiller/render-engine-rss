@@ -21,3 +21,13 @@ class RSSFeedPageParser(BasePageParser):
         """Markup the content with the page's template"""
 
         return content
+
+
+class PodcastPageParser(RSSFeedPageParser):
+    @staticmethod
+    def markup(page: type["Page"], content: str) -> str:
+        """Markup the content with the page's template"""
+        if isinstance(content, list):
+            for item in content:
+                if item.get("type", None) == "text/html":
+                    return item['value']

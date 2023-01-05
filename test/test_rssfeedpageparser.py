@@ -1,9 +1,9 @@
 import copy
 import pytest
 from render_engine import page
-from render_engine_rss.parsers import RSSFeedPageParser
+from render_engine_rss.parsers import RSSFeedPageParser, PodcastPageParser
 
-def test_parse():
+def test_rss_feed_page_parse():
 
     feed_item = {
         'link': 'https://kjaymiller.com/blog/the-pit-show-it-s-easy-when-you-re-customer-number-one.html',
@@ -18,4 +18,27 @@ def test_parse():
     test_page = TestPage()
     assert test_page.link == feed_item['link']
     assert test_page.content == feed_item['summary']
+
+
+def test_podcast_page_parser():
+    feed_item = [
+        {
+            'type': 'text/html',
+            'value': 'some html text',
+        },
+        {
+            'type': 'text/plain',
+            'value': 'some other text',
+        },
+
+    ]
+
+
+    class TestPage(page.Page):
+        Parser = PodcastPageParser
+        content = {'content': feed_item}
+
+    test_page = TestPage()
+    assert test_page.markup == "some html text"
+
 

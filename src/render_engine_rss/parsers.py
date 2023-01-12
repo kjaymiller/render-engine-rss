@@ -4,7 +4,6 @@ from typing import Any
 
 from render_engine.parsers.base_parsers import BasePageParser
 
-
 class RSSFeedPageParser(BasePageParser):
     @staticmethod
     def parse_content(content: dict) -> tuple[dict[str, Any], str]:
@@ -24,6 +23,18 @@ class RSSFeedPageParser(BasePageParser):
 
 
 class PodcastPageParser(RSSFeedPageParser):
+    @staticmethod
+    def parse_content(content: dict) -> tuple[dict[str, Any], str]:
+        """Fething content and atttributes from a content_path"""
+
+        attrs, content = RSSFeedPageParser.parse_content(content)
+
+        if 'image' in attrs:
+            attrs['image'] = attrs["image"].get("href", attrs["image"])
+
+        return attrs, content
+    
+
     @staticmethod
     def markup(page: type["Page"], content: str) -> str:
         """Markup the content with the page's template"""

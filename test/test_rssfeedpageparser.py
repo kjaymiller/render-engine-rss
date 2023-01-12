@@ -36,9 +36,13 @@ def test_podcast_page_parser():
 
     class TestPage(page.Page):
         Parser = PodcastPageParser
-        content = {'content': feed_item}
+        content = {
+                'content': feed_item,
+                'image': {"href": "https://example.com/image.jpg"}
+                }
 
     test_page = TestPage()
+    assert test_page.image == "https://example.com/image.jpg"
     assert test_page.markup == "some html text"
 
 

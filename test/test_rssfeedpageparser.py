@@ -43,6 +43,6 @@ def test_podcast_page_parser():
 
     test_page = TestPage()
     assert test_page.image == "https://example.com/image.jpg"
-    assert test_page.markup == "some html text"
+    assert test_page.content== "some html text"
 
 

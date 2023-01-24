@@ -27,18 +27,14 @@ class PodcastPageParser(RSSFeedPageParser):
     def parse_content(content: dict) -> tuple[dict[str, Any], str]:
         """Fething content and atttributes from a content_path"""
 
-        attrs, content = RSSFeedPageParser.parse_content(content)
+        attrs, _content = RSSFeedPageParser.parse_content(content)
 
         if 'image' in attrs:
             attrs['image'] = attrs["image"].get("href", attrs["image"])
 
-        return attrs, content
-    
+        for item in _content:
+            if item.get("type", None) == "text/html":
+                content = item['value']
 
-    @staticmethod
-    def markup(page: type["Page"], content: str) -> str:
-        """Markup the content with the page's template"""
-        if isinstance(content, list):
-            for item in content:
-                if item.get("type", None) == "text/html":
-                    return item['value']
+        return attrs, content
+        

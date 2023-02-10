@@ -18,13 +18,6 @@ class RSSFeedPageParser(BasePageParser):
         return attrs, content
 
 
-    @staticmethod
-    def markup(page: type["Page"], content: str) -> str:
-        """Markup the content with the page's template"""
-
-        return content
-
-
 class PodcastPageParser(RSSFeedPageParser):
     @staticmethod
     def parse_content_path(content: dict):

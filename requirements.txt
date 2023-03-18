@@ -14,7 +14,7 @@ exceptiongroup==1.1.0
     # via pytest
 feedparser==6.0.10
     # via render-engine-rss (pyproject.toml)
-iniconfig==1.1.1
+iniconfig==2.0.0
     # via pytest
 jinja2==3.1.2
     # via render-engine

@@ -17,6 +17,10 @@ def parse_rss_feed_entry(entry: dict) -> dict[str, Any]:
                         return entry, item['value'] 
             elif isinstance(content, str):
                     return entry, content
+                
+        elif content:=entry.pop('summary', None):
+            if isinstance(content, str):
+                return entry, content
 
         return entry, ""
 
@@ -27,8 +31,10 @@ class RSSFeedPageParser(BasePageParser):
         """Fething content and atttributes from a content_path"""
         return parse_rss_feed_entry(content)
 
+    @staticmethod
+    def parse_content(content: str) -> tuple[dict[str, Any], str]:
+         return parse_rss_feed_entry(content)
+
 
 class PodcastPageParser(RSSFeedPageParser):
-    @staticmethod
-    def parse_content_path(content: dict):
-        return parse_rss_feed_entry(content)
+    pass

@@ -1,4 +1,4 @@
-from typing import Type
+from typing import Any
 from .parsers import RSSFeedPageParser
 import pluggy
 import feedparser
@@ -11,9 +11,12 @@ class RSSCollection(Collection):
     sort_reverse = True
 
     def __init__(self, plugins: list = []):
-        self.raw_content = feedparser.parse(self.content_path)
+        self.content = feedparser.parse(self.content_path)
         super().__init__(plugins=plugins)
 
+    def get_partial_collection(self):
+        for page in self.iter_content_path():
+            yield self.get_page(page)
 
     def iter_content_path(self):
-        return self.raw_content.entries
+        return self.content.entries

@@ -4,12 +4,12 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "render_engine_rss"
-version = "2023.1.0a11"
+dynamic = ["version"]
 description = "RSS Parser and Collection for Render Engine"
 readme = "README.md"
 
 dependencies = [
-    "render-engine >= 2023.1.3a4",
+    "render-engine >= 2023.3.1",
     "feedparser"
 ]
 

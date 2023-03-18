@@ -33,7 +33,7 @@ class RSSFeedPageParser(BasePageParser):
 
     @staticmethod
     def parse_content(content: str) -> tuple[dict[str, Any], str]:
-         return parse_rss_feed_entry(content)
+        return parse_rss_feed_entry(content)
 
 
 class PodcastPageParser(RSSFeedPageParser):

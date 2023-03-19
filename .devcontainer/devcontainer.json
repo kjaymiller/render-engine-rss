@@ -7,5 +7,22 @@
 		"args": {
 			"IMAGE": "python:3.11"
 		}
+	},
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"python.formatting.blackPath": "black",
+				"python.formatting.provider": "black",
+				"python.testing.pytestEnabled": true,
+				"python.testing.pytestPath": "pytest",
+				"python.testing.unittestEnabled": false
+			},
+			"extensions": [
+				"ms-python.python",
+				"github.github",
+				"cschleiden.vscode-github-actions",
+				"microsoft.isort"
+			]
+		}
 	}
 }

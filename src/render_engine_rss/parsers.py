@@ -6,23 +6,23 @@ from render_engine.parsers.base_parsers import BasePageParser
 
 
 def parse_rss_feed_entry(entry: dict) -> dict[str, Any]:
-        if image:=entry.get('image', None):
-            if isinstance(image, dict):
-                entry['image'] = image.get("href", entry["image"])
+    if image := entry.get("image", None):
+        if isinstance(image, dict):
+            entry["image"] = image.get("href", entry["image"])
 
-        if content:=entry.pop('content', None):
-            if isinstance(content, list):
-                for item in content:
-                    if item['type'] == 'text/html':
-                        return entry, item['value'] 
-            elif isinstance(content, str):
-                    return entry, content
-                
-        elif content:=entry.pop('summary', None):
-            if isinstance(content, str):
-                return entry, content
+    if content := entry.pop("content", None):
+        if isinstance(content, list):
+            for item in content:
+                if item["type"] == "text/html":
+                    return entry, item["value"]
+        elif isinstance(content, str):
+            return entry, content
 
-        return entry, ""
+    elif content := entry.pop("summary", None):
+        if isinstance(content, str):
+            return entry, content
+
+    return entry, ""
 
 
 class RSSFeedPageParser(BasePageParser):

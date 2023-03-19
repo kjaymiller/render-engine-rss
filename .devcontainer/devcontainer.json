@@ -1,0 +1,11 @@
+// Create a Python DevContainer
+{
+    "name": "Python Packaging DevContainer",
+    "build": {
+		"dockerfile": "Dockerfile",
+		"context": "..",
+		"args": {
+			"IMAGE": "python:3.11"
+		}
+	}
+}

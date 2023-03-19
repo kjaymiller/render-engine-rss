@@ -4,6 +4,7 @@ import pluggy
 import feedparser
 from render_engine.collection import Collection
 
+
 class RSSCollection(Collection):
     PageParser = RSSFeedPageParser
     content_path = str

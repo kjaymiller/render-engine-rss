@@ -1,2 +1,2 @@
-from .collection import RSSCollection 
+from .collection import RSSCollection
 from .parsers import RSSFeedPageParser

@@ -54,7 +54,7 @@ pyyaml==6.0
     # via python-frontmatter
 render-engine==2023.3.1b14
     # via render-engine-rss (pyproject.toml)
-rich==13.3.2
+rich==13.3.3
     # via render-engine
 sgmllib3k==1.0.0
     # via feedparser

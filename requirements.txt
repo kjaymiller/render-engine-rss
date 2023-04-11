@@ -36,7 +36,7 @@ pluggy==1.0.0
     # via
     #   pytest
     #   render-engine
-pygments==2.14.0
+pygments==2.15.0
     # via rich
 pytest==7.2.2
     # via

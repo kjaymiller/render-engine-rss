@@ -9,15 +9,15 @@ class TestRSSCollection:
 
     collection = SimpleRSSCollection()
 
-    @pytest.mark.skip()
     def test_collection_parses_url(self):
         """
-        Test taht the collection can parse a feed url into pages
-        17 Mar 2023 - With feedparser having a 'cgi deprecation warning' this test is to ensure we can still parse a url
+        Test the collection can parse a feed url into pages
+        17 Mar 2023 - With feedparser having a 'cgi deprecation warning'
+        this test is to ensure we can still parse a url
         
         # TODO: Figure out test for url parsing.
         """
-        assert len(list(self.collection.__iter__())) == 1 
+        assert len([p for p in self.collection.__iter__()]) == 2 
 
 
     @pytest.mark.parametrize(
@@ -29,7 +29,8 @@ class TestRSSCollection:
     )
     def test_collection_parses_pages_string(self, index, title):
         """Test that the collection can parse a feed into pages
-        17 Mar 2023 - With feedparser having a 'cgi deprecation warning' this test is to ensure we can still parse a filepath
+        17 Mar 2023 - With feedparser having a 'cgi deprecation warning'
+        this test is to ensure we can still parse a filepath
         """
         assert [x.title for x in self.collection][index] == title
 
@@ -44,3 +45,6 @@ class TestRSSCollection:
         """Test that the collection can parse a feed into pages with templates"""
 
         assert self.collection.sorted_pages[0].title == "Test Title 2"
+
+    def test_parse_collection_object(self):
+        assert self.

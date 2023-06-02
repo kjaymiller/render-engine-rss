@@ -7,7 +7,6 @@ class RSSCollection(Blog):
     PageParser = RSSFeedPageParser
     content_path = str
     sort_by = "published_parsed"
-    sort_reverse = True
 
     def __init__(self):
         self.content = feedparser.parse(self.content_path)

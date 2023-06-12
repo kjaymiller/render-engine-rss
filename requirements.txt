@@ -38,7 +38,7 @@ pluggy==1.0.0
     #   render-engine
 pygments==2.15.1
     # via rich
-pytest==7.3.1
+pytest==7.3.2
     # via
     #   pytest-mock
     #   render-engine-rss (pyproject.toml)

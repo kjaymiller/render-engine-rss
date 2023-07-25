@@ -52,7 +52,7 @@ python-slugify==8.0.1
     # via render-engine
 pyyaml==6.0
     # via python-frontmatter
-render-engine==2023.5.2a1
+render-engine==2023.7.4a7
     # via render-engine-rss (pyproject.toml)
 rich==13.4.1
     # via render-engine

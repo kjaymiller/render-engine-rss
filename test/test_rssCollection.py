@@ -45,6 +45,3 @@ class TestRSSCollection:
         """Test that the collection can parse a feed into pages with templates"""
 
         assert self.collection.sorted_pages[0].title == "Test Title 2"
-
-    def test_parse_collection_object(self):
-        assert self.
